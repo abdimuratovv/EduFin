@@ -1,7 +1,7 @@
 # EduFin veb-demo dizayn spetsifikatsiyasi
 
 Sana: 2026-11-03
-Holat: suhbatda tasdiqlangan doira asosida yozildi; yozma spetsifikatsiya foydalanuvchi ko‘rigiga tayyor.
+Holat: foydalanuvchi yozma spetsifikatsiyani 2026-11-03 kuni tasdiqladi. Mayda UX detallarini ish davomida qulaylashtirish mumkin; asosiy doira ushbu hujjatga muvofiq.
 Manba: loyiha prezentatsiyasi va foydalanuvchi bilan ushbu chatdagi qarorlar.
 
 ## 1. Maqsad va auditoriya
@@ -217,6 +217,6 @@ Backend uchun hisob izchilligi, takroriy so‘rovlar va huquqlar sinovlari zarur
 
 ## 13. Keyingi ish
 
-Foydalanuvchi ushbu yozma spetsifikatsiyani ko‘rib chiqadi. So‘ng frontend/backend texnologiyalari, ma’lumotlar bazasi, AI/ovoz provayderlari va joylashtirish usuli bo‘yicha amalga oshirish rejasi tayyorlanadi.
+Foydalanuvchi ushbu yozma spetsifikatsiyani tasdiqladi. Keyingi bosqichda frontend/backend texnologiyalari, ma’lumotlar bazasi, AI/ovoz provayderlari va joylashtirish usuli bo‘yicha amalga oshirish rejasi tayyorlanadi.
 
 Haqiqiy to‘lovga o‘tish alohida bosqich: to‘lovni tasdiqlash, qaytarish, provayder bilan hisoblarni solishtirish, mablag‘ egaligi va olish tartibi hamda tegishli talablar o‘sha bosqichda aniqlanadi.
