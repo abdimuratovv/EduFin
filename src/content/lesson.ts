@@ -29,6 +29,8 @@ export interface Lesson {
   id: string;
   version: number;
   title: string;
+  /** AI ustozga beriladigan tasdiqlangan qisqa mazmun. */
+  summary: string;
   hero: { name: string; image: string; alt: string };
   intro: VoiceLine;
   outro: VoiceLine;

@@ -126,4 +126,21 @@ CREATE TABLE audit_log (
 CREATE INDEX idx_audit_family ON audit_log(family_id, created_at);
 `,
   },
+  {
+    id: 3,
+    name: "tutor_requests",
+    sql: `
+-- AI ustoz so'rovlari: faqat holat va vaqt. Prompt, javob matni, bola ismi saqlanmaydi.
+CREATE TABLE tutor_requests (
+  id TEXT PRIMARY KEY,
+  family_id TEXT NOT NULL REFERENCES families(id),
+  child_id TEXT NOT NULL REFERENCES child_profiles(id),
+  task_id TEXT NOT NULL,
+  status TEXT NOT NULL CHECK (status IN ('ai', 'fallback_limit', 'fallback_not_configured', 'fallback_ai_error', 'fallback_audio_error', 'fallback_invalid', 'fallback_timeout')),
+  latency_ms INTEGER NOT NULL,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX idx_tutor_child_task ON tutor_requests(child_id, task_id, status);
+`,
+  },
 ];

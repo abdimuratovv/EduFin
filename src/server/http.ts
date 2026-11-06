@@ -22,6 +22,7 @@ const STATUS: Record<ErrorCode, number> = {
   LOCKED: 429,
   BAD_ORIGIN: 403,
   BAD_REQUEST: 400,
+  BUSY: 429,
 };
 
 type Role = "none" | "any" | "parent" | "child";

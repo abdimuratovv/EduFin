@@ -9,6 +9,7 @@ import s from "./parent.module.css";
 
 interface Dash {
   child: { name: string; avatar: string; age: number };
+  help: { total: number; ai: number; fallback: number };
   balances: { fund: number; child: number };
   lesson: { title: string; totalTasks: number; started: boolean; completedTasks: number; completedAt: string | null; attempts: number; wrongAttempts: number };
   rewardRule: { amount: number | null; lockedForStartedLesson: boolean };
@@ -271,6 +272,12 @@ export function Dashboard() {
               <span>Urinishlar (xato)</span>
               <strong>
                 {d.lesson.attempts} ({d.lesson.wrongAttempts})
+              </strong>
+            </li>
+            <li className={s.item}>
+              <span>Yordam (“Tushuntirib ber”)</span>
+              <strong>
+                {d.help.total === 0 ? "ishlatilmagan" : `${d.help.total} marta (AI: ${d.help.ai}, tayyor: ${d.help.fallback})`}
               </strong>
             </li>
             <li className={s.item}>

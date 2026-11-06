@@ -54,9 +54,13 @@ export function parentDashboard(db: Db, familyId: string, childId: string) {
         .prepare("SELECT COUNT(*) AS total, COALESCE(SUM(1 - correct), 0) AS wrong FROM attempts WHERE progress_id = ?")
         .get(progress.id) as { total: number; wrong: number })
     : { total: 0, wrong: 0 };
+  const help = db
+    .prepare("SELECT COALESCE(SUM(status = 'ai'), 0) AS ai, COUNT(*) AS total FROM tutor_requests WHERE child_id = ?")
+    .get(childId) as { ai: number; total: number };
   return {
     demo: true,
     child: childRow(db, childId),
+    help: { total: help.total, ai: help.ai, fallback: help.total - help.ai },
     balances: getBalances(db, familyId, childId),
     lesson: {
       id: lesson.id,

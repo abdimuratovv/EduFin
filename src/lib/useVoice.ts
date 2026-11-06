@@ -14,9 +14,9 @@ export function useVoice() {
   }, []);
 
   const play = useCallback(
-    (id: string) => {
+    (id: string, src?: string) => {
       stop();
-      const audio = new Audio(`/assets/audio/${id}.mp3`);
+      const audio = new Audio(src ?? `/assets/audio/${id}.mp3`);
       audioRef.current = audio;
       setFailed(false);
       audio.onended = () => setPlaying((p) => (p === id ? null : p));

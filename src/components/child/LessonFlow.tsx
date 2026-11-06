@@ -64,6 +64,8 @@ export function LessonFlow() {
   const [attempt, setAttempt] = useState<Attempt | null>(null);
   const [wrongIds, setWrongIds] = useState<string[]>([]);
   const [helpFor, setHelpFor] = useState<string | null>(null);
+  const [helpText, setHelpText] = useState<string>("");
+  const [helpBusy, setHelpBusy] = useState(false);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [fundOk, setFundOk] = useState(true);
   const [busy, setBusy] = useState(false);
@@ -139,6 +141,28 @@ export function LessonFlow() {
       setError(errorText(e)); // javob qayd etilmagan bo'lsa, qayta urinish mumkin
     } finally {
       setBusy(false);
+    }
+  }
+
+  /** "Tushuntirib ber": server haqiqiy AI + ovozni sinaydi; xatoda tayyor yordam qaytaradi. Aloqa uzilsa ham yordam chiqadi. */
+  async function askHelp(task: Task) {
+    if (helpBusy) return;
+    setHelpBusy(true);
+    setHelpFor(task.id);
+    setHelpText("");
+    try {
+      const r = await api<{
+        text: string;
+        audio: { kind: "ready"; voiceId: string } | { kind: "generated"; base64: string; mime: string };
+      }>("/api/child/tutor", { method: "POST", body: { taskId: task.id } });
+      setHelpText(r.text);
+      if (r.audio.kind === "generated") voice.play(`ai-${task.id}`, `data:${r.audio.mime};base64,${r.audio.base64}`);
+      else voice.play(r.audio.voiceId);
+    } catch {
+      setHelpText(task.help);
+      voice.play(task.voice.help);
+    } finally {
+      setHelpBusy(false);
     }
   }
 
@@ -258,7 +282,11 @@ export function LessonFlow() {
               <p>{attempt.feedback}</p>
             </Notice>
           )}
-          {helpFor === task.id && <div className={s.help}>💡 {task.help}</div>}
+          {helpFor === task.id && (
+            <div className={s.help} aria-live="polite">
+              💡 {helpBusy ? "Bilimcha o‘ylayapti…" : helpText}
+            </div>
+          )}
           {error && <Notice tone="error">{error}</Notice>}
           <div className={s.actions}>
             {!solved && (
@@ -266,10 +294,8 @@ export function LessonFlow() {
                 variant="accent"
                 size="child"
                 disabled={busy}
-                onClick={() => {
-                  setHelpFor(task.id);
-                  voice.play(task.voice.help);
-                }}
+                loading={helpBusy}
+                onClick={() => askHelp(task)}
               >
                 Tushuntirib ber
               </Button>

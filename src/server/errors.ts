@@ -13,7 +13,8 @@ export type ErrorCode =
   | "WRONG_PIN"
   | "LOCKED"
   | "BAD_ORIGIN"
-  | "BAD_REQUEST";
+  | "BAD_REQUEST"
+  | "BUSY";
 
 export class DomainError extends Error {
   constructor(

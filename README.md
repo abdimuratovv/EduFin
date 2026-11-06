@@ -25,7 +25,7 @@ npm run dev                  # http://localhost:3000
 
 ## Holat
 
-1–5-bosqichlar bajarilgan (poydevor, kontent, baza va mukofot, sessiya va PIN, ekranlar va asosiy API). Qolgan: haqiqiy AI ustoz (7), yakuniy tekshiruv (8).
+1–7-bosqichlar bajarilgan. Qolgan: yakuniy tekshiruv va topshirish (8).
 
 ## Dars kontenti va media (2-bosqich)
 
@@ -46,3 +46,11 @@ npm run dev                  # http://localhost:3000
 ### Gemini kalitini olish (7-bosqich: AI ustoz matni)
 
 https://aistudio.google.com → **Get API key** → **Create API key** → `.env.local` ga `GEMINI_API_KEY=...`.
+
+## AI ustoz va ovoz (7-bosqich)
+
+- "Tushuntirib ber" `POST /api/child/tutor` ni chaqiradi: Gemini (`GEMINI_MODEL`, tekshirilgan: `gemini-3.5-flash`) matn yozadi, ElevenLabs (`eleven_v4`) uni ovozga aylantiradi.
+- AIga faqat yosh, dars mazmuni, savol, variantlar, bolaning tanlovi va urinish holati yuboriladi.
+- Natija tekshiriladi (ko'pi bilan 2 gap, lotin yozuvi, markup va moliyaviy so'zlarsiz). Xato, noto'g'ri format, 10 soniyalik chegara yoki 3 ta yangi tushuntirish limiti bo'lsa tayyor ovozli yordam chiqadi.
+- Holatlar `tutor_requests` jadvalida (`ai`, `fallback_*`); prompt va javob matni saqlanmaydi. Ota-ona hisobotida AI va tayyor yordam soni ko'rinadi.
+- Gemini'da `thinkingBudget: 0` qo'yilgan: aks holda fikrlash tokenlari javobni o'rtasida kesib yuboradi (MAX_TOKENS). Kesilgan javob qabul qilinmaydi.

@@ -11,6 +11,7 @@ const schema = z.object({
   GEMINI_MODEL: optional(),
   ELEVENLABS_API_KEY: optional(),
   ELEVENLABS_VOICE_ID: optional(),
+  ELEVENLABS_MODEL: optional(),
 });
 
 export type Env = z.infer<typeof schema>;
