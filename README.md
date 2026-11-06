@@ -22,10 +22,11 @@ npm run dev                  # http://localhost:3000
 - `npm run lint` — ESLint
 - `npm test` — domen va integratsiya testlari (Vitest)
 - `npm run build` — production build
+- `npm run test:e2e` — build + Playwright E2E (Chrome kerak; 3 ta alohida server va baza ishga tushadi)
 
 ## Holat
 
-1–7-bosqichlar bajarilgan. Qolgan: yakuniy tekshiruv va topshirish (8).
+Barcha 8 bosqich bajarilgan (demo tayyor).
 
 ## Dars kontenti va media (2-bosqich)
 
@@ -54,3 +55,19 @@ https://aistudio.google.com → **Get API key** → **Create API key** → `.env
 - Natija tekshiriladi (ko'pi bilan 2 gap, lotin yozuvi, markup va moliyaviy so'zlarsiz). Xato, noto'g'ri format, 10 soniyalik chegara yoki 3 ta yangi tushuntirish limiti bo'lsa tayyor ovozli yordam chiqadi.
 - Holatlar `tutor_requests` jadvalida (`ai`, `fallback_*`); prompt va javob matni saqlanmaydi. Ota-ona hisobotida AI va tayyor yordam soni ko'rinadi.
 - Gemini'da `thinkingBudget: 0` qo'yilgan: aks holda fikrlash tokenlari javobni o'rtasida kesib yuboradi (MAX_TOKENS). Kesilgan javob qabul qilinmaydi.
+
+## Yakuniy tekshiruv (8-bosqich)
+
+Buyruqlar: `npm run typecheck`, `npm run lint`, `npm test` (50 ta unit/integratsiya), `npm run test:e2e` (11 ta E2E, har biri alohida baza bilan).
+
+E2E qamrovi: demo kirish va kod, fond 100 000 → mukofot 2 000 → fond 98 000 / bola 2 000, xato javob va yordam, sahifani yangilash, takroriy dars mukofot bermasligi, fond yetishmasligi (pending → top-up → ota-ona to'lovi), bola sessiyasidan ota-ona API'lariga urinish (403), begona Origin (403), kod urinishlari cheklovi, 360 px telefon (toshishsiz, bosish maydonlari, kamaytirilgan animatsiya) va 768 px planshet. Rang kontrasti (WCAG AA) `tests/unit/contrast.test.ts` da tekshiriladi.
+
+Skrinshotlar: `docs/screenshots/` (desktop, planshet, telefon).
+
+### Cheklovlar (ochiq aytilgan)
+
+- Demo faqat lokal muhit uchun. Haqiqiy to'lov, ko'p oilali akkaunt, admin panel va ommaviy deploy yo'q; haqiqiy foydalanuvchilar uchun alohida ishlab chiqarish dizayni kerak.
+- E2E'da AI yaroqsiz kalit bilan (xato → tayyor yordam) va kalitsiz sinaladi. Haqiqiy Gemini + ElevenLabs integratsiyasi 7-bosqichda qo'lda, jonli kalitlar bilan tekshirilgan (avtomatik emas: pul va kvota sarfi, barqaror emas).
+- AI javobi 5–10 soniya oladi; 10 soniyadan oshsa tayyor yordam chiqadi. Gemini bepul tarif kvotasi tugashi mumkin (zaxira ishlaydi).
+- Ovoz sifati va talaffuz inson qulog'i bilan tekshirilishi kerak (avtomatik tekshiruv faqat matn mosligini ko'radi).
+- Rasmlar qo'lda chizilgan oddiy SVG.
