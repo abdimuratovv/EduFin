@@ -9,8 +9,8 @@ const schema = z.object({
   DATABASE_PATH: z.preprocess(emptyToUndefined, z.string().default("./data/edufin.db")),
   GEMINI_API_KEY: optional(),
   GEMINI_MODEL: optional(),
-  AZURE_SPEECH_KEY: optional(),
-  AZURE_SPEECH_REGION: optional(),
+  ELEVENLABS_API_KEY: optional(),
+  ELEVENLABS_VOICE_ID: optional(),
 });
 
 export type Env = z.infer<typeof schema>;
@@ -34,6 +34,6 @@ export function integrationStatus() {
   const env = getEnv();
   return {
     ai: Boolean(env.GEMINI_API_KEY && env.GEMINI_MODEL),
-    speech: Boolean(env.AZURE_SPEECH_KEY && env.AZURE_SPEECH_REGION),
+    speech: Boolean(env.ELEVENLABS_API_KEY && env.ELEVENLABS_VOICE_ID),
   };
 }

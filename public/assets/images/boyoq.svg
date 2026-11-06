@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img"><title>Bo‘yoqlar</title>
+<rect width="400" height="400" rx="40" fill="#F7F5FF"/>
+<path d="M200 70 C90 70 40 150 60 235 C75 300 140 330 190 320 C225 313 205 270 235 262 C275 252 330 280 350 225 C375 150 310 70 200 70Z" fill="#F2C48D"/>
+<circle cx="140" cy="140" r="30" fill="#E5484D"/><circle cx="215" cy="115" r="30" fill="#FFD166"/>
+<circle cx="285" cy="160" r="30" fill="#2F9BFF"/><circle cx="110" cy="220" r="30" fill="#3FAE5A"/>
+<circle cx="190" cy="250" r="26" fill="#9B6BFF"/>
+<path d="M300 330 L355 255" stroke="#7A4B2A" stroke-width="12" stroke-linecap="round"/><path d="M355 255 L370 235" stroke="#E5484D" stroke-width="12" stroke-linecap="round"/>
+</svg>

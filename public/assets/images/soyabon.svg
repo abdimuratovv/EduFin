@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img"><title>Soyabon</title>
+<rect width="400" height="400" rx="40" fill="#F7F5FF"/>
+<path d="M60 210 Q60 70 200 70 Q340 70 340 210 Q305 185 270 210 Q235 185 200 210 Q165 185 130 210 Q95 185 60 210Z" fill="#FFD166"/>
+<path d="M200 70 Q150 120 130 210 M200 70 L200 210 M200 70 Q250 120 270 210" stroke="#E0A92E" stroke-width="5" fill="none"/>
+<path d="M200 210 L200 320 Q200 350 170 350 Q150 350 150 330" stroke="#6D5EF5" stroke-width="14" fill="none" stroke-linecap="round"/>
+<g fill="#4DA3FF"><path d="M60 280 q8 16 0 24 q-8 -8 0 -24z"/><path d="M300 270 q8 16 0 24 q-8 -8 0 -24z"/><path d="M340 330 q8 16 0 24 q-8 -8 0 -24z"/><path d="M95 340 q8 16 0 24 q-8 -8 0 -24z"/></g>
+</svg>

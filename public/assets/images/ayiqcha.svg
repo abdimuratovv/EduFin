@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img"><title>Ayiqcha</title>
+<rect width="400" height="400" rx="40" fill="#F7F5FF"/>
+<ellipse cx="200" cy="360" rx="100" ry="12" fill="#6D5EF5" opacity=".15"/>
+<circle cx="120" cy="110" r="38" fill="#B97A4A"/><circle cx="280" cy="110" r="38" fill="#B97A4A"/>
+<circle cx="120" cy="110" r="20" fill="#E8B98A"/><circle cx="280" cy="110" r="20" fill="#E8B98A"/>
+<ellipse cx="200" cy="290" rx="85" ry="75" fill="#B97A4A"/><ellipse cx="200" cy="295" rx="50" ry="48" fill="#E8B98A"/>
+<circle cx="200" cy="165" r="90" fill="#B97A4A"/>
+<ellipse cx="200" cy="190" rx="42" ry="32" fill="#E8B98A"/><ellipse cx="200" cy="178" rx="14" ry="10" fill="#1F1B3A"/>
+<circle cx="165" cy="145" r="10" fill="#1F1B3A"/><circle cx="235" cy="145" r="10" fill="#1F1B3A"/>
+<path d="M185 200 Q200 215 215 200" stroke="#1F1B3A" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M130 260 Q90 270 85 310" stroke="#B97A4A" stroke-width="28" fill="none" stroke-linecap="round"/>
+<path d="M270 260 Q310 270 315 310" stroke="#B97A4A" stroke-width="28" fill="none" stroke-linecap="round"/>
+</svg>

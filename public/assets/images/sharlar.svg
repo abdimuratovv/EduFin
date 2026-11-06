@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img"><title>Rangli sharlar</title>
+<rect width="400" height="400" rx="40" fill="#F7F5FF"/>
+<g stroke="#1F1B3A" stroke-width="3" fill="none" opacity=".6"><path d="M130 205 Q180 300 200 360"/><path d="M200 175 L200 360"/><path d="M270 205 Q220 300 200 360"/></g>
+<ellipse cx="130" cy="150" rx="55" ry="65" fill="#FF6B8B"/>
+<ellipse cx="200" cy="115" rx="55" ry="65" fill="#FFD166"/>
+<ellipse cx="270" cy="150" rx="55" ry="65" fill="#4CC9A6"/>
+<ellipse cx="110" cy="125" rx="9" ry="16" fill="#fff" opacity=".5"/><ellipse cx="180" cy="90" rx="9" ry="16" fill="#fff" opacity=".5"/><ellipse cx="250" cy="125" rx="9" ry="16" fill="#fff" opacity=".5"/>
+</svg>

@@ -1,0 +1,55 @@
+{
+  "id": "ehtiyoj-va-istak",
+  "version": 1,
+  "title": "Ehtiyoj va istak",
+  "hero": { "name": "Bilimcha", "image": "/assets/images/bilimcha.svg", "alt": "Binafsha rangli quvnoq qahramon Bilimcha" },
+  "intro": {
+    "voiceId": "intro",
+    "text": "Salom! Men Bilimchaman. Bugun ehtiyoj va istak haqida o‘rganamiz. Ehtiyoj — bu bizga juda kerak narsa. Istak — bu bizga yoqadigan, lekin shart bo‘lmagan narsa."
+  },
+  "outro": {
+    "voiceId": "outro",
+    "text": "Barakalla! Sen uchala topshiriqni ham bajarding. Endi ehtiyoj va istakni farqlay olasan!"
+  },
+  "tasks": [
+    {
+      "id": "t1",
+      "order": 1,
+      "situation": "Tushlik uchun oziq-ovqat olish kerak. Olma yoki yangi o‘yinchoqdan qaysi biri hozir kerak?",
+      "options": [
+        { "id": "t1-a", "label": "Olma", "image": "/assets/images/olma.svg", "alt": "Qizil olma" },
+        { "id": "t1-b", "label": "Yangi o‘yinchoq", "image": "/assets/images/mashina.svg", "alt": "O‘yinchoq mashina" }
+      ],
+      "correctOptionId": "t1-a",
+      "correct": "Barakalla! Olma hozir kerak, chunki tushlikda ovqat kerak. O‘yinchoq esa istak.",
+      "wrong": "Yaxshi urinish! O‘yinchoq yoqadi, lekin tushlik uchun ovqat kerak. Yana bir bor o‘ylab ko‘ramizmi?",
+      "help": "Tushlik vaqtida nima yeymiz? Ovqat bizga kuch beradi."
+    },
+    {
+      "id": "t2",
+      "order": 2,
+      "situation": "Tashqarida yomg‘ir yog‘yapti. Ho‘l bo‘lmaslik uchun soyabon yoki rangli sharlardan qaysi biri kerak?",
+      "options": [
+        { "id": "t2-a", "label": "Rangli sharlar", "image": "/assets/images/sharlar.svg", "alt": "Rangli sharlar" },
+        { "id": "t2-b", "label": "Soyabon", "image": "/assets/images/soyabon.svg", "alt": "Sariq soyabon" }
+      ],
+      "correctOptionId": "t2-b",
+      "correct": "Barakalla! Soyabon yomg‘irdan saqlaydi, shuning uchun u ehtiyoj. Sharlar esa istak.",
+      "wrong": "Yaxshi urinish! Sharlar chiroyli, lekin ular bizni yomg‘irdan saqlamaydi. Yana o‘ylab ko‘ramizmi?",
+      "help": "Yomg‘irda nima bizni ho‘l bo‘lishdan saqlaydi?"
+    },
+    {
+      "id": "t3",
+      "order": 3,
+      "situation": "Sen rasm chizmoqchisan. Bo‘yoqlar yoki katta ayiqchadan qaysi biri kerak?",
+      "options": [
+        { "id": "t3-a", "label": "Bo‘yoqlar", "image": "/assets/images/boyoq.svg", "alt": "Rangli bo‘yoqlar palitrasi" },
+        { "id": "t3-b", "label": "Katta ayiqcha", "image": "/assets/images/ayiqcha.svg", "alt": "Yumshoq ayiqcha" }
+      ],
+      "correctOptionId": "t3-a",
+      "correct": "Barakalla! Rasm chizish uchun bo‘yoqlar kerak. Ayiqcha esa istak.",
+      "wrong": "Yaxshi urinish! Ayiqcha yumshoq va yoqimli, lekin rasm chizish uchun boshqa narsa kerak. Yana bir bor urinib ko‘ramizmi?",
+      "help": "Rasm chizish uchun nima bilan chizamiz?"
+    }
+  ]
+}

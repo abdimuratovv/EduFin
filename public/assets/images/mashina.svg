@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" role="img"><title>O‘yinchoq mashina</title>
+<rect width="400" height="400" rx="40" fill="#F7F5FF"/>
+<ellipse cx="200" cy="320" rx="150" ry="12" fill="#6D5EF5" opacity=".15"/>
+<path d="M50 260 L50 220 Q50 200 70 200 L120 200 L160 150 Q170 140 185 140 L260 140 Q275 140 285 152 L320 200 L340 205 Q360 210 360 230 L360 260Z" fill="#2F9BFF"/>
+<path d="M170 155 L135 200 L205 200 L205 155Z" fill="#CDE8FF"/><path d="M220 155 L220 200 L300 200 L270 155Z" fill="#CDE8FF"/>
+<circle cx="120" cy="265" r="40" fill="#1F1B3A"/><circle cx="120" cy="265" r="16" fill="#FFD166"/>
+<circle cx="285" cy="265" r="40" fill="#1F1B3A"/><circle cx="285" cy="265" r="16" fill="#FFD166"/>
+<rect x="335" y="222" width="22" height="14" rx="5" fill="#FFD166"/>
+</svg>
