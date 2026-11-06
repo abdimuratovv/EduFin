@@ -7,7 +7,13 @@ export type ErrorCode =
   | "LESSON_NOT_STARTED"
   | "LESSON_INCOMPLETE"
   | "INVALID_TASK"
-  | "INVALID_OPTION";
+  | "INVALID_OPTION"
+  | "UNAUTHENTICATED"
+  | "FORBIDDEN"
+  | "WRONG_PIN"
+  | "LOCKED"
+  | "BAD_ORIGIN"
+  | "BAD_REQUEST";
 
 export class DomainError extends Error {
   constructor(

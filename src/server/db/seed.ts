@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { lesson } from "../../content/lesson";
+import { hashPin } from "../auth/pin";
+import { ensureParentPin } from "../auth/sessions";
 import { topUp } from "../rewards/ledger";
 import { setRewardRule } from "../rewards/rewards";
 import { immediate, type Db } from "./connection";
@@ -14,19 +16,28 @@ export interface DemoIds {
 }
 
 /** Demo oila, 5 yoshli bola, mukofot qoidasi va fondning birinchi top-up'i. Qayta chaqirilsa mavjudni qaytaradi. */
-export function seedDemo(db: Db): DemoIds {
+export function seedDemo(db: Db, pin?: string): DemoIds {
   const existing = db
     .prepare(
       "SELECT f.id AS familyId, p.id AS parentId, c.id AS childId FROM families f JOIN parents p ON p.family_id = f.id JOIN child_profiles c ON c.family_id = f.id LIMIT 1",
     )
     .get() as DemoIds | undefined;
-  if (existing) return existing;
+  if (existing) {
+    if (pin) ensureParentPin(db, existing.familyId, pin);
+    return existing;
+  }
 
   const ids: DemoIds = { familyId: randomUUID(), parentId: randomUUID(), childId: randomUUID() };
   const now = new Date().toISOString();
   immediate(db, () => {
     db.prepare("INSERT INTO families (id, name, created_at) VALUES (?, ?, ?)").run(ids.familyId, "Demo oila", now);
-    db.prepare("INSERT INTO parents (id, family_id, display_name, created_at) VALUES (?, ?, ?, ?)").run(ids.parentId, ids.familyId, "Demo ota-ona", now);
+    db.prepare("INSERT INTO parents (id, family_id, display_name, pin_hash, created_at) VALUES (?, ?, ?, ?, ?)").run(
+      ids.parentId,
+      ids.familyId,
+      "Demo ota-ona",
+      pin ? hashPin(pin) : null,
+      now,
+    );
     db.prepare("INSERT INTO child_profiles (id, family_id, name, avatar, age, created_at) VALUES (?, ?, ?, ?, 5, ?)").run(ids.childId, ids.familyId, "Madina", "bilimcha", now);
   });
   setRewardRule(db, ids.familyId, lesson.id, DEMO_REWARD);

@@ -25,7 +25,7 @@ npm run dev                  # http://localhost:3000
 
 ## Holat
 
-1–3-bosqichlar bajarilgan (poydevor, kontent, baza va mukofot domeni). AI va ovoz kalitlari ixtiyoriy; bo'lmasa tayyor yordam ishlatiladi (7-bosqich).
+1–4-bosqichlar bajarilgan (poydevor, kontent, baza va mukofot, sessiya va ota-ona PIN himoyasi). AI va ovoz kalitlari ixtiyoriy; bo'lmasa tayyor yordam ishlatiladi (7-bosqich).
 
 ## Dars kontenti va media (2-bosqich)
 

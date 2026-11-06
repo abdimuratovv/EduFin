@@ -8,8 +8,9 @@ const globalForDb = globalThis as unknown as { __edufinDb?: Db };
 /** Ilova uchun yagona baza ulanishi (dev rejimida qayta yuklanishga chidamli). */
 export function getDb(): Db {
   if (!globalForDb.__edufinDb) {
-    const db = openDb(getEnv().DATABASE_PATH);
-    seedDemo(db);
+    const env = getEnv();
+    const db = openDb(env.DATABASE_PATH);
+    seedDemo(db, env.PARENT_DEMO_PIN);
     globalForDb.__edufinDb = db;
   }
   return globalForDb.__edufinDb;

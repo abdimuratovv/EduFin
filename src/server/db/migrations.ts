@@ -103,4 +103,27 @@ CREATE TABLE ledger_transactions (
 CREATE INDEX idx_ledger_family ON ledger_transactions(family_id, created_at);
 `,
   },
+  {
+    id: 2,
+    name: "auth",
+    sql: `
+-- PIN urinishlari serverda saqlanadi: sahifani yangilash hisoblagichni o'chirmaydi.
+CREATE TABLE pin_attempts (
+  family_id TEXT PRIMARY KEY REFERENCES families(id),
+  failed_count INTEGER NOT NULL DEFAULT 0,
+  locked_until TEXT,
+  updated_at TEXT NOT NULL
+);
+
+-- Muhim amallar yozuvi. PIN va sessiya tokenlari bu yerga yozilmaydi.
+CREATE TABLE audit_log (
+  id TEXT PRIMARY KEY,
+  family_id TEXT NOT NULL REFERENCES families(id),
+  event TEXT NOT NULL,
+  detail TEXT,
+  created_at TEXT NOT NULL
+);
+CREATE INDEX idx_audit_family ON audit_log(family_id, created_at);
+`,
+  },
 ];
