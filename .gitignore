@@ -1,0 +1,22 @@
+node_modules/
+.next/
+out/
+build/
+coverage/
+next-env.d.ts
+*.tsbuildinfo
+
+# env va maxfiy kalitlar
+.env
+.env.*
+!.env.example
+
+# lokal baza
+data/*
+!data/.gitkeep
+
+# test natijalari
+playwright-report/
+test-results/
+
+.DS_Store

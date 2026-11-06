@@ -1,0 +1,18 @@
+.main {
+  min-height: 100dvh;
+  display: grid;
+  place-content: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  text-align: center;
+}
+
+.title { margin: 0; font-size: 2.5rem; color: var(--color-primary); }
+
+.badge {
+  justify-self: center;
+  background: var(--color-accent);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-lg);
+  font-weight: 700;
+}

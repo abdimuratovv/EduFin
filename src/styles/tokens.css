@@ -1,0 +1,28 @@
+:root {
+  --color-primary: #6d5ef5;
+  --color-accent: #ffd166;
+  --color-bg: #f7f5ff;
+  --color-text: #1f1b3a;
+  --color-surface: #ffffff;
+
+  --font-sans: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --tap-min: 48px;
+  --tap-child: 56px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
