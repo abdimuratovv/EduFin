@@ -116,7 +116,9 @@ export function route<B = undefined>(
       return res;
     } catch (e) {
       if (e instanceof DomainError) return fail(e.code, e.message);
-      console.error("API xatosi:", e instanceof Error ? e.name : "noma'lum"); // so'rov mazmuni va maxfiy qiymatlar yozilmaydi
+      // Faqat xato turi va xabari yoziladi (muhit xatosi maydon nomlarini, SQLite yo'l/ruxsat xatolarini ko'rsatadi).
+      // So'rov mazmuni, PIN, token va kalit qiymatlari yozilmaydi.
+      console.error("API xatosi:", e instanceof Error ? `${e.name}: ${e.message}` : "noma'lum");
       return Response.json({ ok: false, error: { code: "INTERNAL", message: "Ichki xatolik. Qayta urinib ko‘ring." } }, { status: 500 });
     }
   };
