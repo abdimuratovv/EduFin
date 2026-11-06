@@ -31,6 +31,7 @@ export interface Ctx<B> {
   req: Request;
   session: Session | null;
   body: B;
+  params: Record<string, string>;
   /** Sessiya cookie'sini o'rnatish (token) yoki o'chirish (null). */
   setSession(token: string | null, maxAgeSeconds?: number): void;
 }
@@ -80,7 +81,7 @@ export function route<B = undefined>(
   opts: { role: Role; schema?: ZodType<B> },
   fn: (ctx: Ctx<B>) => Promise<unknown> | unknown,
 ) {
-  return async (req: Request): Promise<Response> => {
+  return async (req: Request, rc?: { params?: Promise<Record<string, string>> }): Promise<Response> => {
     try {
       if (!originAllowed(req)) return fail("BAD_ORIGIN", "So‘rov manzili ruxsat etilmagan.");
       const db = getDb();
@@ -106,6 +107,7 @@ export function route<B = undefined>(
         req,
         session,
         body,
+        params: (await rc?.params) ?? {},
         setSession: (token, maxAge) => cookies.push(cookieHeader(req, token, maxAge)),
       });
       const res = json(result);

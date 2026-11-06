@@ -1,11 +1,24 @@
 :root {
   --color-primary: #6d5ef5;
+  --color-primary-dark: #4a3dc9;
+  --color-primary-soft: #ebe8ff;
   --color-accent: #ffd166;
+  --color-accent-dark: #e0a92e;
   --color-bg: #f7f5ff;
   --color-text: #1f1b3a;
+  --color-text-soft: #4d4870;
   --color-surface: #ffffff;
+  --color-border: #d9d4f5;
+  --color-success: #17794f;
+  --color-success-bg: #e3f6ec;
+  --color-warn: #8a5300;
+  --color-warn-bg: #fff1d6;
+  --color-info-bg: #ebe8ff;
+  --color-error: #a53a1f;
+  --color-error-bg: #ffe7df;
+  --color-focus: #1f1b3a;
 
-  --font-sans: "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --font-sans: var(--font-nunito), "Nunito", "Segoe UI", system-ui, -apple-system, sans-serif;
 
   --space-1: 4px;
   --space-2: 8px;
@@ -13,16 +26,22 @@
   --space-4: 24px;
   --space-5: 32px;
 
+  --radius-sm: 12px;
   --radius-md: 16px;
   --radius-lg: 24px;
+  --shadow-card: 0 2px 0 rgba(109, 94, 245, 0.08), 0 8px 24px rgba(74, 61, 201, 0.08);
+  --shadow-button: 0 4px 0 var(--color-primary-dark);
 
   --tap-min: 48px;
   --tap-child: 56px;
+  --nav-h: 68px;
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

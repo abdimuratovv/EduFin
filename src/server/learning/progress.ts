@@ -5,7 +5,7 @@ import { immediate, type Db } from "../db/connection";
 import { accountBalance } from "../rewards/ledger";
 import { getRewardRule, newEntitlementId, tryPayInTx, type Entitlement } from "../rewards/rewards";
 
-interface ProgressRow {
+export interface ProgressRow {
   id: string;
   childId: string;
   lessonId: string;
@@ -24,7 +24,7 @@ function childFamily(db: Db, childId: string): string {
   return r.f;
 }
 
-function getProgress(db: Db, childId: string, l: Lesson): ProgressRow | undefined {
+export function getProgress(db: Db, childId: string, l: Lesson): ProgressRow | undefined {
   return db
     .prepare(`SELECT ${PCOLS} FROM lesson_progress WHERE child_id = ? AND lesson_id = ? AND lesson_version = ?`)
     .get(childId, l.id, l.version) as ProgressRow | undefined;

@@ -1,18 +1,8 @@
 .main {
-  min-height: 100dvh;
-  display: grid;
-  place-content: center;
-  gap: var(--space-3);
-  padding: var(--space-4);
-  text-align: center;
+  min-height: 100dvh; display: grid; place-content: center; justify-items: center;
+  gap: var(--space-3); padding: var(--space-4) var(--space-3); text-align: center; max-width: 560px; margin: 0 auto;
 }
-
-.title { margin: 0; font-size: 2.5rem; color: var(--color-primary); }
-
-.badge {
-  justify-self: center;
-  background: var(--color-accent);
-  padding: var(--space-2) var(--space-3);
-  border-radius: var(--radius-lg);
-  font-weight: 700;
-}
+.badge { background: var(--color-accent); font-weight: 800; padding: var(--space-2) var(--space-3); border-radius: 999px; }
+.lead { font-size: 1.2rem; color: var(--color-text-soft); }
+.actions { display: grid; gap: var(--space-3); width: 100%; }
+.small { font-size: 0.95rem; color: var(--color-text-soft); }
